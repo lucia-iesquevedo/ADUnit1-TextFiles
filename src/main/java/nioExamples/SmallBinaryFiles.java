@@ -1,5 +1,7 @@
 package nioExamples;
 
+import config.Configuration;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,7 +11,7 @@ import java.nio.file.StandardOpenOption;
 public class SmallBinaryFiles {
 
 	public static void main(String[] args) {
-		Path file = Paths.get("TxtFiles/test.txt");
+		Path file = Paths.get(Configuration.getInstance().getProperty("pathFile"));
 
 		//Array of bytes for storing all the bytes from the file
 		byte[] fileArray;

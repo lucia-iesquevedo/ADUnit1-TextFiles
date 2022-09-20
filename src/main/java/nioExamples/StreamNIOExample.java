@@ -1,5 +1,8 @@
 package nioExamples;
 
+import config.Configuration;
+
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -7,11 +10,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class StreamNIIOExample {
+public class StreamNIOExample {
 	
 	public static void main(String[] args) {
-		Path input = Paths.get("TxtFiles/test.txt");
-		Path output = Paths.get("TxtFiles/output.txt");
+		Path input = Paths.get(Configuration.getInstance().getProperty("pathFile"));
+		Path output = Paths.get(Configuration.getInstance().getProperty("outputFile"));
 		
 		InputStream istream=null;
 		OutputStream ostream=null;

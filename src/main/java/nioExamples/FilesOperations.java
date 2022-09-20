@@ -15,9 +15,9 @@ public class FilesOperations {
 
 	public static void main(String[] args) {
 		//Make sure there is a file "input.txt" and have a copy of it as it will be removed
-		Path p1 = Paths.get("testFiles/myFile.txt");
-		Path p2 = Paths.get("testFiles/myDirectory");
-		Path p3 = Paths.get("testFiles/nonexisting");
+		Path p1 = Paths.get("data/myFile.txt");
+		Path p2 = Paths.get("data/myDirectory");
+		Path p3 = Paths.get("data/nonexisting");
 		
 		/*
 		 * According to the following code and the values returned,
@@ -64,9 +64,9 @@ public class FilesOperations {
 		//Copying files and directories
 		/* What does the option REPLACE_EXISTING do? Show it*/
 		Path p5 = Paths.get("../copy2.txt");
-		Path p6 = Paths.get("testFiles/copy.txt");
+		Path p6 = Paths.get("data/copy.txt");
 		
-                try {
+        try {
 			Files.copy(p6, p5,REPLACE_EXISTING);
 		} catch (FileAlreadyExistsException x) {
 			System.err.println(x);
@@ -77,7 +77,7 @@ public class FilesOperations {
 		
 		/*What does the following code do?*/
 		Path p7 = Paths.get("../move.txt");
-		Path p8 = Paths.get("testFiles/move.txt");
+		Path p8 = Paths.get("data/move.txt");
 		try {
 			Files.move(p8, p7,REPLACE_EXISTING);
 		} catch (FileAlreadyExistsException x) {

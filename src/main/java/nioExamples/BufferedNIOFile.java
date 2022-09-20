@@ -1,20 +1,21 @@
 package nioExamples;
 
+import config.Configuration;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import static java.nio.file.StandardOpenOption.APPEND;
-import static java.nio.file.StandardOpenOption.WRITE;
+
+import static java.nio.file.StandardOpenOption.*;
 
 public class BufferedNIOFile {
 
 	public static void main(String[] args) throws IOException{
-            Path file= Paths.get("TxtFiles/test.txt");
+            Path file= Paths.get(Configuration.getInstance().getProperty("pathFile"));
            
             //Read the file
             //Charset charset = Charset.forName("UTF-8");
@@ -38,7 +39,7 @@ public class BufferedNIOFile {
             // Write into the file    
             String s = "Line written using Files.newBufferedWriter \n" ;
             OpenOption[] options = new OpenOption[2];
-            options[0] = APPEND;
+            options[0] = TRUNCATE_EXISTING;
             options[1] = WRITE;
 
             //Creates a BufferedWriter (java.io) in a more efficient way using Files from java.nio

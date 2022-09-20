@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ioExamples;
+import config.Configuration;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,7 +14,7 @@ import java.util.logging.Logger;
  */
 public class StreamIOExample {
     public static void main(String[] args) {
-        File file = new File("TxtFiles/test.txt");
+        File file = new File(Configuration.getInstance().getProperty("pathFile"));
 
         //Read from a file
         try (InputStream in = new FileInputStream(file)) {
@@ -26,7 +27,7 @@ public class StreamIOExample {
         }
         
         // Write into a file (Appending)
-       try (OutputStream os = new FileOutputStream(file, true)){            
+       try (OutputStream os = new FileOutputStream(file, true)){
             String s = "Line written with a FileOutputStream\n"; 
             // Writes bytes from the specified byte array to this file output stream 
             os.write(s.getBytes());

@@ -1,0 +1,4 @@
+Line written with a BufferedWriter
+Line written with a BufferedWriter
+Line written with a BufferedWriter
+Line written with a FileOutputStream

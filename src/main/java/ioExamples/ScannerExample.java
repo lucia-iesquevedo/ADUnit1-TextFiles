@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 package ioExamples;
-import java.io.File; 
+import config.Configuration;
+import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner; 
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
@@ -21,7 +22,7 @@ public class ScannerExample {
   { 
     // pass the path to the file as a parameter 
     File file = 
-      new File("TxtFiles/test.txt"); 
+      new File(Configuration.getInstance().getProperty("pathFile"));
     Scanner sc; 
       try {
           sc = new Scanner(file);

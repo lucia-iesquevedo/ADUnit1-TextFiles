@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package ioExamples;
+import config.Configuration;
+
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,11 +20,12 @@ public class BufferedIOExample {
   public static void main(String[] args)
   { 
   
-    File file = new File("TxtFiles/test.txt"); 
+    File file = new File(Configuration.getInstance().getProperty("pathFile"));
   
     // Read from the file
     try {
         BufferedReader br = new BufferedReader(new FileReader(file));
+
         String st;
         while ((st = br.readLine()) != null) 
               System.out.println(st); 
